@@ -1,0 +1,19 @@
+Manage and control versions of your services and APIs.
+
+Route messages between different versions of the same API for backward compatibility and smooth transitioning to the new API versions.
+
+Keep API discovery, description and API documentation consistent with your API versions.
+
+Notify developers and API consumers on any changes to your APIs and their versions.
+
+Track dependencies between service and API versions.
+
+Track and audit changes to your API versions.
+
+
+---------
+How do you maintain the versions of your end point?
+
+-new
+-updated
+-reverted
