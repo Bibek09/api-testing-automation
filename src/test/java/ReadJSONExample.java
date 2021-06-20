@@ -1,55 +1,44 @@
-import java.io.FileNotFoundException;
-import java.io.FileReader;
-import java.io.IOException;
-
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
-import org.json.simple.parser.ParseException;
 
-public class ReadJSONExample
-{
+import java.io.FileReader;
+import java.util.Iterator;
+
+/**
+ * @author Crunchify.com
+ * How to Read JSON Object From File in Java?
+ */
+
+public class ReadJSONExample {
+
+
     @SuppressWarnings("unchecked")
-    public static void main(String[] args)
-    {
-        //JSON parser object to parse read file
-        JSONParser jsonParser = new JSONParser();
+    public static void main(String[] args) {
+        JSONParser parser = new JSONParser();
+        try {
+            Object obj = parser.parse(new FileReader("src/main/resources/sample.json"));
 
-        try (FileReader reader = new FileReader("employees.json"))
-        {
-            //Read JSON file
-            Object obj = jsonParser.parse(reader);
+            // A JSON object. Key value pairs are unordered. JSONObject supports java.util.Map interface.
+            JSONObject jsonObject = (JSONObject) obj;
 
-            JSONArray employeeList = (JSONArray) obj;
-            System.out.println(employeeList);
+            // A JSON array. JSONObject supports java.util.List interface.
+            JSONArray companyList = (JSONArray) jsonObject.get("places");
 
-            //Iterate over employee array
-            employeeList.forEach( emp -> parseEmployeeObject( (JSONObject) emp ) );
 
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
-        } catch (IOException e) {
-            e.printStackTrace();
-        } catch (ParseException e) {
+            // An iterator over a collection. Iterator takes the place of Enumeration in the Java Collections Framework.
+            // Iterators differ from enumerations in two ways:
+            // 1. Iterators allow the caller to remove elements from the underlying collection during the iteration with well-defined semantics.
+            // 2. Method names have been improved.
+            Iterator<JSONObject> iterator = companyList.iterator();
+            while (iterator.hasNext()) {
+                System.out.println(iterator.next());
+            }
+        } catch (Exception e) {
             e.printStackTrace();
         }
     }
-
-    private static void parseEmployeeObject(JSONObject employee)
-    {
-        //Get employee object within list
-        JSONObject employeeObject = (JSONObject) employee.get("employee");
-
-        //Get employee first name
-        String firstName = (String) employeeObject.get("firstName");
-        System.out.println(firstName);
-
-        //Get employee last name
-        String lastName = (String) employeeObject.get("lastName");
-        System.out.println(lastName);
-
-        //Get employee website name
-        String website = (String) employeeObject.get("website");
-        System.out.println(website);
-    }
 }
+
+
+

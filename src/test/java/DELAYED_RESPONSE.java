@@ -5,7 +5,7 @@ import io.restassured.response.Response;
 import io.restassured.specification.RequestSpecification;
 import org.testng.Assert;
 import org.testng.annotations.Test;
-
+import static org.hamcrest.Matchers.*;
 import java.util.concurrent.TimeUnit;
 
 
@@ -24,7 +24,7 @@ public class DELAYED_RESPONSE {
         long timeInS = response.timeIn(TimeUnit.SECONDS);
         Assert.assertEquals(timeInS, timeInMS/1000);
 
-        //RestAssured.when().get("/api/users?delay=3").then().time(//lessThan(5000L));
+        RestAssured.when().get("/api/users?delay=3").then().time(lessThan(5000L));
 
 
     }

@@ -11,3 +11,29 @@ status code:
 comments
 
 }
+
+
+query parameter or form parameter for GET and POST/PUT respectively.
+REST Assured will automatically try to determine which parameter type (i.e. query or form parameter) based on the HTTP method.
+In case of GET query parameters will automatically be used and in case of POST form parameters will be used.
+https://testautomationu.applitools.com/automating-your-api-tests-with-rest-assured/chapter3.html - TODO
+
+https://stackoverflow.com/questions/31803954/rest-assured-java-lang-assertionerror-json-path-body-doesnt-match
+The "actual" part looks like the toString call on a collection or an array. You are comparing the contents of the JSONArray class against an actual JSON document.
+You have to serialize the JSONArray as a JSON document before comparing it against the response of your service.
+
+https://www.baeldung.com/rest-assured-tutorial data types - TODO
+
+Regular expression ex date in json response? - TODO
+http://makeseleniumeasy.com/2021/05/19/rest-assured-tutorial-73-how-to-ignore-node-s-for-json-comparison-in-jsonassert/
+
+https://www.freeformatter.com/json-formatter.html#ad-output - TODO
+https://tools.knowledgewalls.com/online-multiline-to-single-line-converter - TODO
+
+https://stackoverflow.com/questions/63174787/rest-assured-compare-two-json-objects - TODO
+
+https://www.james-willett.com/rest-assured-extract-json-response/ TODO
+
+https://howtodoinjava.com/testng/testng-executing-parallel-tests/  IMPORTANT TODO
+
+https://testautomationu.applitools.com/automating-your-api-tests-with-rest-assured/chapter6.html - Deserilization TODO

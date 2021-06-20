@@ -1,1 +1,1 @@
-[{"employee":{"firstName":"Lokesh","lastName":"Gupta","website":"howtodoinjava.com"}},{"employee":{"firstName":"Brian","lastName":"Schultz","website":"example.com"}}]
+[{"employee":{"firstName":"Lokesh","lastName":"Gupta","website":"howtodoinjava.com","Fees":100.5}},{"employee":{"firstName":"Brian","lastName":"Schultz","website":"example.com","Fees":100.1}}]
