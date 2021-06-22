@@ -1,0 +1,6 @@
+# ignore all logs
+*.log
+# ignore all class files
+*.class
+# ignore all jar
+*.jar
